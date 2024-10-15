@@ -624,6 +624,10 @@ video {
   width: auto;
 }
 
+.w-9 {
+  width: 2.25rem;
+}
+
 .max-w-6xl {
   max-width: 72rem;
 }
@@ -824,6 +828,10 @@ video {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
+}
+
+.\[w\:R\FFFD-\] {
+  w: R�-;
 }
 
 .hover\:bg-gray-50:hover {

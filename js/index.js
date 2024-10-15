@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Add a transaction to the transactions list.
   const addTransaction = transaction => {
     const newRow = document.createElement("tr");
-    newRow.className = "border-b hover:bg-gray-50 transition-colors"
+    newRow.className = "border-b hover:bg-gray-50 transition-colors";
 
     // Create the td elements
     const descriptionCell = document.createElement("td");
@@ -42,22 +42,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
     typeCell.textContent = transaction.type;
     typeCell.className = "p-2";
-    typeCell.classList.add(transaction.type.toLowerCase() === 'income' ? 'text-secondary' : 'text-accent');
+    typeCell.classList.add(
+      transaction.type.toLowerCase() === "income"
+        ? "text-secondary"
+        : "text-accent"
+    );
 
     amountCell.textContent = transaction.amount;
     amountCell.className = "p-2 font-medium";
-    amountCell.classList.add(transaction.type.toLowerCase() === 'income' ? 'text-secondary' : 'text-accent');
+    amountCell.classList.add(
+      transaction.type.toLowerCase() === "income"
+        ? "text-secondary"
+        : "text-accent"
+    );
 
     actionCell.className = "p-2";
 
     // Create buttons for Edit and Delete
     const editBtn = document.createElement("button");
     editBtn.textContent = "Edit";
-    editBtn.className = "bg-primary text-white py-1 px-3 rounded mr-2 hover:bg-primary/90 transition-colors";
+    editBtn.className =
+      "bg-primary text-white py-1 px-3 rounded mr-2 hover:bg-primary/90 transition-colors";
 
     const delBtn = document.createElement("button");
     delBtn.textContent = "Delete";
-    delBtn.className = "bg-red-500 text-white py-1 px-3 rounded hover:bg-red-600 transition-colors";
+    delBtn.className =
+      "bg-red-500 text-white py-1 px-3 rounded hover:bg-red-600 transition-colors";
 
     // Append buttons to actionCell
     actionCell.appendChild(editBtn);
@@ -77,23 +87,27 @@ document.addEventListener("DOMContentLoaded", () => {
       // Replace the td content with input fields
       const descriptionInput = document.createElement("input");
       descriptionInput.value = transaction.description;
-      descriptionInput.className = "w-full p-1 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary";
+      descriptionInput.className =
+        "w-full p-1 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary";
       descriptionCell.replaceChildren(descriptionInput);
 
       const typeInput = document.createElement("input");
       typeInput.value = transaction.type;
-      typeInput.className = "w-full p-1 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary";
+      typeInput.className =
+        "w-full p-1 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary";
       typeCell.replaceChildren(typeInput);
 
       const amountInput = document.createElement("input");
       amountInput.type = "number";
       amountInput.value = transaction.amount;
-      amountInput.className = "w-full p-1 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary";
+      amountInput.className =
+        "w-full p-1 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary";
       amountCell.replaceChildren(amountInput);
 
       // Change Edit button to Save button
       editBtn.textContent = "Save";
-      editBtn.className = "bg-secondary text-white py-1 px-3 rounded mr-2 hover:bg-secondary/90 transition-colors";
+      editBtn.className =
+        "bg-secondary text-white py-1 px-3 rounded mr-2 hover:bg-secondary/90 transition-colors";
 
       // Remove the click event for Edit, and add a new one for Save
       editBtn.addEventListener(
