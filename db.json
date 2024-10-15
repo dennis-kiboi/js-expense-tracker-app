@@ -53,18 +53,6 @@
       "type": "Income",
       "amount": 399.66,
       "id": "9bd8"
-    },
-    {
-      "description": "Movie Tickets",
-      "type": "Income",
-      "amount": 981.83,
-      "id": "c7e1"
-    },
-    {
-      "id": "9f0a",
-      "description": "Salary",
-      "type": "Income",
-      "amount": "10000"
     }
   ]
 }
