@@ -1,3 +1,5 @@
+const baseURL = "https://js-expense-tracker-be.onrender.com/transactions"
+
 document.addEventListener("DOMContentLoaded", () => {
   const transactionList = document.querySelector("#transactions-list");
   const transactionForm = document.querySelector("form");
@@ -10,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
       amount: parseFloat(newAmount) // Ensure amount is numeric
     };
 
-    fetch(`http://localhost:3000/transactions/${id}`, {
+    fetch(`${baseURL}/${id}`, {
       method: "PATCH", // Using PATCH for partial updates
       headers: {
         "Content-Type": "application/json"
@@ -75,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Add event listener to the delete button
     delBtn.addEventListener("click", () => {
-      fetch(`http://localhost:3000/transactions/${transaction.id}`, {
+      fetch(`${baseURL}/${transaction.id}`, {
         method: "DELETE"
       })
         .then(() => newRow.remove())
@@ -134,7 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   // Create a list of existing transaction on page load
-  fetch("http://localhost:3000/transactions") // localhost == 127.0.0.1
+  fetch(baseURL) // localhost == 127.0.0.1
     .then(response => response.json())
     .then(transactions => {
       transactions.forEach(transaction => {
